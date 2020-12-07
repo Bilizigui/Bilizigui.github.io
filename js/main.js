@@ -80,7 +80,7 @@ $(document).ready(function() {
   $(function() {
     typed.typed({
       strings: ["Gaël Mihart.", "Etudiant.", "En recherche de stage.", "Intéressé par l'informatique."],
-      typeSpeed: 1000,
+      typeSpeed: 300,
       loop: true,
     });
   });
