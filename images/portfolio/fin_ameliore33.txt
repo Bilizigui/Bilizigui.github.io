@@ -6,9 +6,9 @@
   
   #include <dht11.h> // charger la librairie
   
-  dht11 DHT11; // CrÃ©er le capteur pour humiditÃ©/tempÃ©rature
+  dht11 DHT11; // Créer le capteur pour humidité/température
   
-  #define DHT11PIN 6 // DÃ©finir la pin utilisÃ©e par ce capteur
+  #define DHT11PIN 6 // Définir la pin utilisée par ce capteur
   
   //CheckWind():
   
@@ -23,8 +23,8 @@
   int FEtalonage = 1;          // Frequence d'etalonnage de l'anemometre
 
   //LCD():
-  #include <LiquidCrystal.h> // on importe la bibliothÃ¨que
-  LiquidCrystal monEcran(12,11,5,4,3,2); // on crÃ©e l'objet Ã©cran
+  #include <LiquidCrystal.h> // on importe la bibliothèque
+  LiquidCrystal monEcran(12,11,5,4,3,2); // on crée l'objet écran
   
   //*********** Creation des fonctions ***********\\
   
@@ -33,7 +33,7 @@
   
    bool CheckRain()
   {
-      pinMode(water, INPUT);   // Determine le pin du capteur et qu'il recoit des donnÃ©es
+      pinMode(water, INPUT);   // Determine le pin du capteur et qu'il recoit des données
       int indicateur = analogRead(water);  // on lis une valeur analogique sur ce pin
       if (indicateur = 0);
       return indicateur == 0;   // == return true; return false;
@@ -45,7 +45,7 @@
   {
       int temperature = DHT11.read(DHT11PIN); // Lecture du capteur
   
-      Serial.print("Temperature (Â°C): "); // TempÃ©rature
+      Serial.print("Temperature (°C): "); // Température
       Serial.println((float)DHT11.temperature, 2);  // on montre la temp dans l'invite de commande
        
       if (temperature < 40)
@@ -53,14 +53,14 @@
       return false;
   }
   
-  //*********** Fonction detection de l'humiditÃ© ***********\\
+  //*********** Fonction detection de l'humidité ***********\\
   
   bool CheckHumidity()
           {
               int humidity = DHT11.read(DHT11PIN); // Lecture du capteur
   
-    Serial.print("Humidite (%): "); // HumiditÃ©
-    Serial.println((float)DHT11.humidity, 2);  // on montre l'humiditÃ© dans l'invite de commande
+    Serial.print("Humidite (%): "); // Humidité
+    Serial.println((float)DHT11.humidity, 2);  // on montre l'humidité dans l'invite de commande
              
               if (humidity > 0.6)
                   return true;
@@ -109,9 +109,9 @@
   {
       
       monEcran.begin(16,2); //on initialise la communication avec 16 colonnes et deux lignes
-      monEcran.clear(); // on efface l'Ã©cran
+      monEcran.clear(); // on efface l'écran
       monEcran.print("Il faut Rouler a :"); // On ecrit
-      monEcran.setCursor(0,1); //on passe Ã  la ligne suivante
+      monEcran.setCursor(0,1); //on passe à la ligne suivante
       monEcran.print(x ,"km/h"); // on donne la vitesse
 
     
@@ -154,7 +154,7 @@
   
 
 
-  //*********** Utilisation des fonctions pour arriver aux resultats recherchÃ©s ***********\\
+  //*********** Utilisation des fonctions pour arriver aux resultats recherchés ***********\\
   
   void setup() {
     
